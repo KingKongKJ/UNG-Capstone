@@ -7,3 +7,65 @@ CREATE TABLE [dbo].[Restaurant] (
     [RestaurantID] VARCHAR (50)  NOT NULL,
     [Party Size (Max)] VARCHAR(50) NULL, 
     PRIMARY KEY CLUSTERED ([Name] ASC)
+);
+
+
+CREATE TABLE [dbo].[Registration] (
+    [RestaurantID] VARCHAR (50)  NOT NULL,
+    [Name]         VARCHAR (50)  NOT NULL,
+    [Type]         VARCHAR (50)  NOT NULL,
+    [Address]      VARCHAR (MAX) NOT NULL,
+    [Hours]        VARCHAR (50)  NOT NULL,
+    [Description]  VARCHAR (MAX) NULL,
+    [Email] VARCHAR(50) NULL, 
+    PRIMARY KEY CLUSTERED ([RestaurantID] ASC)
+);
+
+
+CREATE TABLE [dbo].[Table] (
+    [TableID]       VARCHAR (50) NOT NULL,
+    [T Party Size]  INT          NOT NULL,
+    [Setting]       VARCHAR (50) NOT NULL,
+    [ReservationID] INT          NOT NULL,
+    [Name]          VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([TableID] ASC)
+);
+
+
+CREATE TABLE [dbo].[Reservation] (
+    [ReservationID] INT          NOT NULL,
+    [Time]          TIME (7)     NOT NULL,
+    [Date]          DATE         NOT NULL,
+    [Party Size]    INT          NOT NULL,
+    [RestaurantID]  VARCHAR (50) NOT NULL,
+    [CustomerID]    INT          NOT NULL,
+    [TableID]       VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ReservationID] ASC)
+);
+
+
+CREATE TABLE [dbo].[Customer] (
+    [CustomerID]    INT          NOT NULL,
+    [First]         VARCHAR (50) NOT NULL,
+    [Last]          VARCHAR (50) NOT NULL,
+    [Email]         VARCHAR (50) NOT NULL,
+    [Phone]         VARCHAR (50) NULL,
+    [ReservationID] INT          NULL,
+    PRIMARY KEY CLUSTERED ([CustomerID] ASC)
+);
+
+
+CREATE TABLE [dbo].[Rewards] (
+    [UserID]     VARCHAR (50) NOT NULL,
+    [CustomerID] INT          NOT NULL
+);
+
+
+CREATE TABLE [dbo].[MyAccount
+] (
+    [UserID]     VARCHAR (50) NOT NULL,
+    [Password]   VARCHAR (50) NOT NULL,
+    [M Email]    VARCHAR (50) NOT NULL,
+    [CustomerID] INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([UserID] ASC)
+);
