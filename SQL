@@ -1,11 +1,11 @@
 CREATE TABLE [dbo].[Restaurant] (
-    [Restaurant Name]             VARCHAR (50)  NOT NULL,
+    [Restaurant Name]  VARCHAR (50)  NOT NULL,
     [Type]             VARCHAR (50)  NOT NULL,
     [Address]          VARCHAR (MAX) NOT NULL,
     [Hours]            VARCHAR (MAX) NOT NULL,
     [Description]      VARCHAR (MAX) NULL,
     [RestaurantID]     VARCHAR (50)  NOT NULL,
-    [Party Size (Max)] VARCHAR (50)  NULL,
+    [Party Size (Max)] INT  NULL,
     PRIMARY KEY CLUSTERED ([Restaurant Name] ASC)
 );
 
